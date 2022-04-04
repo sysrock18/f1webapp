@@ -1,0 +1,35 @@
+.navbar {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  border-bottom: 1px solid rgba(34,36,38,.15);
+  box-shadow: 0 1px 2px 0 rgb(34 36 38 / 15%);
+  min-height: 2.85714286em;
+  background: #fff;
+  
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    font-weight: 400;
+
+    a {
+      text-decoration: none;
+
+      .aboutLink {
+        font-family: 'VT323';
+        font-size: 1.8em;
+        text-decoration: none;
+        color: #000;
+        display: flex;
+        align-items: center;
+  
+        span {
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+}

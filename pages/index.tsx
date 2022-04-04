@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import _ from 'lodash'
 import api from '../api'
 import Link from 'next/link'
@@ -12,7 +12,6 @@ export const getServerSideProps = async () => {
 function Home({ circuits }: { circuits: Circuit[] }) {
   return (
     <div>
-      <h1>Formula 1 Circuits</h1>
       {circuits.map(circuit => (
         <div key={circuit.id}>
           <h2>
