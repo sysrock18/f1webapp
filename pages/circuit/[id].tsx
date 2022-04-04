@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import api from '../../api'
 import { Circuit } from '../../models/Circuit'
-import Navbar from '../../components/Navbar'
 
 function CircuitDescription() {
   const { query: { id } } = useRouter()
@@ -19,7 +18,6 @@ function CircuitDescription() {
 
   return (
     <div>
-      <Navbar />
       Circuit Description: {id}
       <h2>{circuit.name}</h2>
     </div>

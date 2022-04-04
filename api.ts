@@ -1,5 +1,6 @@
 import CircuitAdapter from "./services/adapters/CircuitAdapter"
 import _ from "lodash"
+import fetch from "isomorphic-unfetch"
 
 const api = {
   getCircuits: () => {

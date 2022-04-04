@@ -1,22 +1,17 @@
 import React, { useEffect, useState } from 'react'
-import Navbar from '../components/Navbar'
 import _ from 'lodash'
 import api from '../api'
 import Link from 'next/link'
+import { Circuit } from 'models/Circuit'
 
-function Home() {
-  const [circuits, setCircuits] = useState([])
+export const getServerSideProps = async () => {
+  const circuits = await api.getCircuits()
+  return { props: { circuits } }
+}
 
-  useEffect(() => {
-    api.getCircuits()
-      .then(resCircuits => {
-        setCircuits(resCircuits)
-      })
-  }, [])
-
+function Home({ circuits }: { circuits: Circuit[] }) {
   return (
     <div>
-      <Navbar />
       <h1>Formula 1 Circuits</h1>
       {circuits.map(circuit => (
         <div key={circuit.id}>
