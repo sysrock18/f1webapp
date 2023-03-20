@@ -1,10 +1,9 @@
 import React from 'react'
-import _ from 'lodash'
 import api from '../api'
 import Link from 'next/link'
 import { Circuit } from 'models/Circuit'
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const circuits = await api.getCircuits()
   return { props: { circuits } }
 }
