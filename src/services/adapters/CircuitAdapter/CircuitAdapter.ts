@@ -1,9 +1,8 @@
-import { Circuit } from '../../models/Circuit';
-import { isArray } from 'lodash';
+import { Circuit, RawCircuitLocation } from './types';
+import isArray from 'lodash/isArray';
 
-class CircuitAdapter {
-
-  static adaptCircuitList(rawCircuitList: any): Circuit[] {
+export class CircuitAdapter {
+  static adaptCircuitList(rawCircuitList: RawCircuitLocation[]): Circuit[] {
     const circuitList: Circuit[] = [];
 
     if (isArray(rawCircuitList)) {
@@ -15,7 +14,7 @@ class CircuitAdapter {
     return circuitList;
   }
 
-  static adaptCircuitItem(rawCircuitItem: any): Circuit {
+  static adaptCircuitItem(rawCircuitItem: RawCircuitLocation): Circuit {
     const {
       circuitId,
       circuitName,
@@ -30,5 +29,3 @@ class CircuitAdapter {
     };
   }
 }
-
-export default CircuitAdapter;
