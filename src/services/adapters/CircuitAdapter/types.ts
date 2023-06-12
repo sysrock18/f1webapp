@@ -5,7 +5,7 @@ export type Circuit = {
   imageUrl: string;
 };
 
-export type RawCircuitLocation = {
+export type RawCircuit = {
   circuitId: string;
   circuitName: string;
   url: string;
