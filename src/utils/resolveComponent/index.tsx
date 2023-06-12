@@ -1,0 +1,1 @@
+export { resolveComponent } from './resolveComponent';

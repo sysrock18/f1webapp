@@ -1,11 +1,11 @@
-import api from '@/services/api';
+import { api } from '@/services/api';
 import Link from 'next/link';
 
 export default async function Home() {
   const circuits = await api.getCircuits();
 
   return (
-    <main className="min-h-screen py-16 container m-auto">
+    <main className="min-h-screen py-16 container m-auto" data-testid="home-page" id="home-page">
       <h1>F1 FanTrack</h1>
       <div>
         {circuits.map(circuit => (

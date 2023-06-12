@@ -5,9 +5,9 @@ import Link from 'next/link'
 import React from 'react'
 import { StyledAboutlink, StyledNav, StyledNavbarContainer } from './styles'
 
-function Navbar() {
+export function Navbar() {
   return (
-    <StyledNavbarContainer>
+    <StyledNavbarContainer data-testid="navbar">
       <StyledNav className='container py-[20px] max-sm:px-[20px]'>
         <Link href="/">
           <Image
@@ -32,5 +32,3 @@ function Navbar() {
     </StyledNavbarContainer>
   )
 }
-
-export default Navbar
