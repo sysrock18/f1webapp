@@ -1,5 +1,7 @@
+import { TRACK_IMAGES } from './constants';
 import { Circuit, RawCircuit } from './types';
 import isArray from 'lodash/isArray';
+import Track404 from '../../../../public/images/track_404.svg';
 
 export class CircuitAdapter {
   static adaptCircuitList(rawCircuitList: RawCircuit[]): Circuit[] {
@@ -20,7 +22,7 @@ export class CircuitAdapter {
     return {
       id: circuitId,
       name: circuitName,
-      imageUrl: '',
+      imageUrl: TRACK_IMAGES[circuitId] || Track404,
       url: url,
     };
   }

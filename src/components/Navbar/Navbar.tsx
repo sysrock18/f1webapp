@@ -8,11 +8,25 @@ export function Navbar() {
     <StyledNavbarContainer data-testid="navbar">
       <StyledNav className="container py-[20px] max-sm:px-[20px]">
         <Link href="/">
-          <Image src="/images/f1logo-pixelart.png" alt="F1 Logo" width={100} height={30} />
+          <Image
+            src="/images/f1logo-pixelart.png"
+            alt="F1 Logo"
+            width="0"
+            height="0"
+            sizes="100vw"
+            style={{ width: '100px', height: '30px' }}
+          />
         </Link>
         <Link href="/about">
           <StyledAboutlink>
-            <Image src="/images/checkered-flag-icon.png" alt="flag" width={20} height={20} />
+            <Image
+              src="/images/checkered-flag-icon.png"
+              alt="flag"
+              width="0"
+              height="0"
+              sizes="100vw"
+              style={{ width: '20px', height: '20px' }}
+            />
             <span>About</span>
           </StyledAboutlink>
         </Link>

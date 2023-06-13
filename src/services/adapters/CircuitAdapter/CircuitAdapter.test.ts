@@ -1,4 +1,5 @@
 import { CircuitAdapter } from '.';
+import { TRACK_IMAGES } from './constants';
 import { CIRCUIT_LIST } from './mock';
 
 describe('CircuitAdapter', () => {
@@ -9,7 +10,7 @@ describe('CircuitAdapter', () => {
         CIRCUIT_LIST.map((circuitItem) => ({
           id: circuitItem.circuitId,
           name: circuitItem.circuitName,
-          imageUrl: '',
+          imageUrl: TRACK_IMAGES[circuitItem.circuitId],
           url: circuitItem.url,
         }))
       );
@@ -22,7 +23,7 @@ describe('CircuitAdapter', () => {
       expect(circuit).toEqual({
         id: CIRCUIT_LIST[0].circuitId,
         name: CIRCUIT_LIST[0].circuitName,
-        imageUrl: '',
+        imageUrl: TRACK_IMAGES[CIRCUIT_LIST[0].circuitId],
         url: CIRCUIT_LIST[0].url,
       });
     });
