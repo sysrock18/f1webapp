@@ -1,3 +1,54 @@
 {
-  "extends": "next/core-web-vitals"
+  "env": {
+      "browser": true,
+      "es2021": true,
+      "node": true,
+      "jest": true
+  },
+  "extends": [
+      "next",
+      "next/core-web-vitals",
+      "prettier",
+      "plugin:@typescript-eslint/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+      "ecmaVersion": "latest",
+      "sourceType": "module",
+      "ecmaFeatures": {
+          "jsx": true
+      }
+  },
+  "plugins": [
+      "prettier",
+      "@typescript-eslint"
+  ],
+  "rules": {
+      "prettier/prettier": [
+          "error",
+          {
+              "printWidth": 120,
+              "bracketSpacing": true,
+              "singleQuote": true,
+              "trailingComma": "es5"
+          }
+      ],
+      "linebreak-style": [
+          "error",
+          "unix"
+      ],
+      "quotes": [
+          "error",
+          "single"
+      ],
+      "eqeqeq": "error",
+      "no-var": "error",
+      "prefer-arrow-callback": "warn",
+      "prefer-const": "error",
+      "no-console": "error",
+      "no-duplicate-case": "warn",
+      "@typescript-eslint/no-unused-vars": "warn",
+      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/ban-ts-comment": "off"
+  }
 }

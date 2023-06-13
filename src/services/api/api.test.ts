@@ -1,6 +1,6 @@
-import axios from "axios";
-import { api } from ".";
-import { F1_BASE_URL } from "./api";
+import axios from 'axios';
+import { api } from '.';
+import { F1_BASE_URL } from './api';
 
 jest.mock('axios');
 
@@ -8,7 +8,7 @@ describe('api', () => {
   describe('getCircuits', () => {
     beforeEach(() => {
       jest.resetAllMocks();
-      (axios.get as jest.Mock).mockReturnValue({ data: {} })
+      (axios.get as jest.Mock).mockReturnValue({ data: {} });
     });
 
     it('should call axios with correct url', async () => {

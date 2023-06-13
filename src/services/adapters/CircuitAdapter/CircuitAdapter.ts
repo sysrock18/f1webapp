@@ -6,7 +6,7 @@ export class CircuitAdapter {
     const circuitList: Circuit[] = [];
 
     if (isArray(rawCircuitList)) {
-      rawCircuitList.forEach(rawDashboardItem => {
+      rawCircuitList.forEach((rawDashboardItem) => {
         circuitList.push(CircuitAdapter.adaptCircuitItem(rawDashboardItem));
       });
     }
@@ -15,17 +15,13 @@ export class CircuitAdapter {
   }
 
   static adaptCircuitItem(rawCircuitItem: RawCircuit): Circuit {
-    const {
-      circuitId,
-      circuitName,
-      url
-    } = rawCircuitItem || {};
+    const { circuitId, circuitName, url } = rawCircuitItem || {};
 
     return {
       id: circuitId,
       name: circuitName,
       imageUrl: '',
-      url: url
+      url: url,
     };
   }
 }

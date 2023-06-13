@@ -5,10 +5,10 @@ export default async function Home() {
   const circuits = await api.getCircuits();
 
   return (
-    <main className="min-h-screen py-16 container m-auto" data-testid="home-page" id="home-page">
+    <main className="container m-auto min-h-screen py-16" data-testid="home-page" id="home-page">
       <h1>F1 FanTrack</h1>
       <div>
-        {circuits.map(circuit => (
+        {circuits.map((circuit) => (
           <div key={circuit.id}>
             <h2>
               <Link href={`circuit/${circuit.id}`}>{circuit.name}</Link>
@@ -17,5 +17,5 @@ export default async function Home() {
         ))}
       </div>
     </main>
-  )
+  );
 }
