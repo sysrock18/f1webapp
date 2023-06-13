@@ -1,20 +1,11 @@
-import { api } from '@/services/api';
-import Link from 'next/link';
+import { CircuitsGrid } from './containers/CircuitsGrid';
 
 export default async function Home() {
-  const circuits = await api.getCircuits();
-
   return (
     <main className="container m-auto min-h-screen py-16" data-testid="home-page" id="home-page">
       <h1>F1 FanTrack</h1>
       <div>
-        {circuits.map((circuit) => (
-          <div key={circuit.id}>
-            <h2>
-              <Link href={`circuit/${circuit.id}`}>{circuit.name}</Link>
-            </h2>
-          </div>
-        ))}
+        <CircuitsGrid />
       </div>
     </main>
   );
