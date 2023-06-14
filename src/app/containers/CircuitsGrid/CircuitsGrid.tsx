@@ -4,12 +4,12 @@ import { api } from '@/services/api';
 import { CircuitCard } from '@/components/CircuitCard';
 
 export const CircuitsGrid = async () => {
-  const circuits = await api.getCircuits();
+  const races = await api.getSeasonRaces();
 
   return (
     <StyledGrid>
-      {circuits.map((circuit) => (
-        <CircuitCard circuit={circuit} key={circuit.id} />
+      {races.map((race) => (
+        <CircuitCard race={race} key={`race-${race.round}`} />
       ))}
     </StyledGrid>
   );

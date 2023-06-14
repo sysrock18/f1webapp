@@ -1,0 +1,1 @@
+export { ConstructorAdapter } from './ConstructorAdapter';

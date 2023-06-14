@@ -8,8 +8,8 @@ export class CircuitAdapter {
     const circuitList: Circuit[] = [];
 
     if (isArray(rawCircuitList)) {
-      rawCircuitList.forEach((rawDashboardItem) => {
-        circuitList.push(CircuitAdapter.adaptCircuitItem(rawDashboardItem));
+      rawCircuitList.forEach((rawCircuit) => {
+        circuitList.push(CircuitAdapter.adaptCircuitItem(rawCircuit));
       });
     }
 

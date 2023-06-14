@@ -9,4 +9,4 @@ export type RawCircuit = {
   circuitId: string;
   circuitName: string;
   url: string;
-}
+};

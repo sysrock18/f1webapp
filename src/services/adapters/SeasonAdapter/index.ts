@@ -1,0 +1,1 @@
+export { SeasonAdapter } from './SeasonAdapter';
