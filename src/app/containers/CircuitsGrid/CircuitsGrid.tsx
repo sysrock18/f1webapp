@@ -7,7 +7,7 @@ export const CircuitsGrid = async () => {
   const races = await api.getSeasonRaces();
 
   return (
-    <StyledGrid>
+    <StyledGrid data-testid="circuits-grid">
       {races.map((race) => (
         <CircuitCard race={race} key={`race-${race.round}`} />
       ))}

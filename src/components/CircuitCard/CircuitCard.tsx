@@ -7,7 +7,7 @@ export const CircuitCard = ({ race }: { race: SeasonRace }) => {
   const { circuit, raceName, date, url } = race;
 
   return (
-    <StyledArticle>
+    <StyledArticle data-testid="circuit-card">
       <StyledLink href={url} target="_blank" prefetch={false}>
         <ContentBox>
           <Image alt="" width="0" height="0" sizes="100vw" className="mb-[8px] h-auto w-full" src={circuit.imageUrl} />

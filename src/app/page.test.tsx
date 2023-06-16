@@ -1,11 +1,15 @@
 import Home from './page';
 import { render } from '@testing-library/react';
-import { resolveComponent } from '@/utils/resolveComponent';
+
+jest.mock('./containers/CircuitsGrid', () => ({
+  CircuitsGrid: () => {
+    return <div>CircuitsGrid</div>;
+  },
+}));
 
 describe('Home', () => {
   it('renders', async () => {
-    const HomeResolved = await resolveComponent(Home, {});
-    const { queryByTestId } = render(<HomeResolved />);
+    const { queryByTestId } = render(<Home />);
     expect(queryByTestId('home-page')).toBeInTheDocument();
   });
 });
