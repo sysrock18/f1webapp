@@ -18,6 +18,7 @@ export type SeasonRace = {
   raceName: string;
   date: Date;
   circuit: Circuit;
+  raceWinner?: RaceWinner;
 };
 
 export type RawRaceWinner = {

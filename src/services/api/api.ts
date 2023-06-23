@@ -2,6 +2,7 @@ import axios from 'axios';
 import { CircuitAdapter } from '../adapters/CircuitAdapter';
 import get from 'lodash/get';
 import { SeasonAdapter } from '../adapters/SeasonAdapter/SeasonAdapter';
+import keyBy from 'lodash/keyBy';
 
 export const F1_BASE_URL = 'https://ergast.com/api/f1';
 
@@ -20,7 +21,11 @@ export const api = {
   },
   getSeasonRaces: async function () {
     const { data } = await axios.get(`${F1_BASE_URL}/current.json`);
-    const adaptedSeasonRaces = SeasonAdapter.adaptSeasonRaces(get(data, 'MRData.RaceTable.Races'));
+
+    const racesWinners = await this.getRacesWinners();
+    const indexedRacesWinners = keyBy(racesWinners, 'round');
+
+    const adaptedSeasonRaces = SeasonAdapter.adaptSeasonRaces(get(data, 'MRData.RaceTable.Races'), indexedRacesWinners);
 
     return adaptedSeasonRaces;
   },

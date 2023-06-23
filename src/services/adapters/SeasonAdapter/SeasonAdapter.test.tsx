@@ -31,6 +31,33 @@ describe('SeasonAdapter', () => {
         circuit: CircuitAdapter.adaptCircuitItem(RAW_SEASON_RACES[0].Circuit),
       });
     });
+
+    it('should return a season race with a race winner', () => {
+      const mockRaceWinner = {
+        season: '2023',
+        round: '8',
+        driver: {
+          id: 'max_verstappen',
+          url: 'http://en.wikipedia.org/wiki/Max_Verstappen',
+          code: 'VER',
+          name: 'Max Verstappen',
+        },
+        constructor: {
+          id: 'red_bull',
+          url: 'http://en.wikipedia.org/wiki/Red_Bull_Racing',
+          name: 'Red Bull',
+        },
+      };
+      const seasonRace = SeasonAdapter.adaptSeasonRace(RAW_SEASON_RACES[0], mockRaceWinner);
+      expect(seasonRace).toEqual({
+        url: RAW_SEASON_RACES[0].url,
+        round: RAW_SEASON_RACES[0].round,
+        raceName: RAW_SEASON_RACES[0].raceName,
+        date: new Date(RAW_SEASON_RACES[0].date),
+        circuit: CircuitAdapter.adaptCircuitItem(RAW_SEASON_RACES[0].Circuit),
+        raceWinner: mockRaceWinner,
+      });
+    });
   });
 
   describe('adaptRacesWinners', () => {
