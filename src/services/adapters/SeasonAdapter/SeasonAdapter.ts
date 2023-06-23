@@ -22,7 +22,6 @@ export class SeasonAdapter {
 
   static adaptSeasonRace(rawSeasonRace: RawSeasonRace, raceWinner?: RaceWinner): SeasonRace {
     const { round, raceName, date, Circuit, url } = rawSeasonRace || {};
-    console.log({ raceWinner });
 
     return {
       url,
